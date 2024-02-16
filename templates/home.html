@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <nav>
+        <header>
+            <p><a href="/s_list/">Student List</a></p>
+            <p><a href="/logout_user/">Logout</a></p>
+        </header>
+    </nav>
+<div class="container">
+    <form action="/submit/"  method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+    <fieldset>
+        <legend><h4>Form</h4></legend>
+        <label for="sno">S.No.</label><br>
+        <input type="text" id="sno" name="sno" value=""><br>
+        <label for="fname">First name</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br>
+        <label for="lang">Language</label><br>
+        <input type="text" id="lang" name="language" value=""><br><br>
+        <label for="file">Select image</label>
+        <input type="file" id="file" name="image" accept="image/*"><br><br>
+        <input type="submit" value="Submit">
+
+    </fieldset>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+<div class="container">
+    {% if st %}
+    <form action="/update/{{st.id}}/"  method="post" enctype='multipart/form-data'>
+        {% csrf_token %}
+
+
+        <legend><h4>Edit Form</h4></legend>
+        <label for="sno">S.No.</label><br>
+        <input type="text" id="sno" name="sno" value="{{st.sno}}"><br>
+        <label for="fname">First name</label><br>
+        <input type="text" id="fname" name="fname" value="{{st.fname}}"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="{{st.lname}}"><br>
+        <label for="lang">Language</label><br>
+        <input type="text" id="lang" name="language" value="{{st.language}}"><br><br>
+        <label for="file">Select image</label>
+        <input type="file" id="file" name="image" value="{{st.image}}" accept="image/*"><br><br>
+        <input type="submit" value="Submit">
+
+    </form>
+    {% endif %}
+</div>
+</body>
+</html>

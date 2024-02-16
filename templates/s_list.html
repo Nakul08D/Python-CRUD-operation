@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+    table th td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <table>
+            <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Last Name</th>
+                <th>Language</th>
+                <th>Image</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                
+            </tr>
+            {% for i in st %}
+                <tr>
+                <td>{{i.sno}}</td>
+                <td>{{i.fname}}</td>
+                <td>{{i.lname}}</td>
+                <td>{{i.language}}</td>
+                {% if i.image %}
+                    <td>
+                        <img src="{{i.image.url}}" alt="img" height="30px">
+                    </td>
+                {% else %}
+                    <td><img src="{% static 'image(1).jpg'%}" alt="" height="30px"></td>
+                {% endif %}
+                <td><a href="/edit/{{i.id}}/">Edit</a></td>
+                <td><a href="/delete/{{i.id}}/">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        <div>
+            <p><a href="/home">Add Student</a></p>
+        </div>
+    </div>
+    
+</body>
+</html>

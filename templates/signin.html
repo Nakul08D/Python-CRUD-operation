@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+</head>
+<body>
+<div class="container">
+    <form action="/signin_info/"  method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend><h4>SignIn Form</h4></legend>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value=""><br>
+            <label for="password1">Password1:</label><br>
+            <input type="text" id="password1" name="password1" value=""><br>
+            <label for="password2">Passwod2:</label><br>
+            <input type="text" id="password2" name="password2" value=""><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
